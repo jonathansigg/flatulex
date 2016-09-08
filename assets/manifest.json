@@ -1,22 +1,16 @@
 {
   "dependencies": {
-    "main.js": {
+    "flatulex.js": {
       "files": [
-        "scripts/main.js",
-        "scripts/collapse.js"
+        "scripts/flatulex.js"
       ],
       "main": true
     },
-    "main.css": {
+    "flatulex.css": {
       "files": [
-        "styles/main.scss"
+        "styles/flatulex.scss"
       ],
       "main": true
-    },
-    "ie.css": {
-      "files": [
-        "styles/ie.scss"
-      ]
     },
     "jquery.js": {
       "bower": ["jquery"]
