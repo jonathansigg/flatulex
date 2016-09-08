@@ -1,15 +1,15 @@
 {
   "name": "flatulex",
-  "version": "8.4.2",
-  "author": "Ben Word <ben@benword.com>",
-  "homepage": "https://roots.io/sage/",
+  "version": "1.0.0",
+  "author": "Jonathan Sigg <jonathan.sigg@cs2.ch>",
+  "homepage": "https://jonathansigg.github.io/flatulex/",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/roots/sage.git"
+    "url": "git://github.com/jonathansigg/flatulex.git"
   },
   "bugs": {
-    "url": "https://github.com/roots/sage/issues"
+    "url": "https://github.com/jonathansigg/flatulex/issues"
   },
   "licenses": [
     {
