@@ -1,8 +1,0 @@
-.fade { visibility: hidden; transition: visibility $animation-base, opacity $animation-base; }
-.fade.in { visibility: visible; }
-
-// content wrapper
-.content-wrapper { padding: $content-wrapper-padding 0; }
-
-// disable outline on links and buttons
-a:focus, button:focus { outline: none !important; }

@@ -3,30 +3,6 @@
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 @import "../../bower_components/css-hamburgers/_sass/hamburgers/hamburgers.scss";
-@import "../../bower_components/bootstrap/scss/bootstrap.scss";
 // endbower
 
-// mixins
-@import "mixin/grid";
-
-// global main files
 @import "common/global";
-@import "components/buttons";
-@import "components/forms";
-@import "components/grid";
-
-// optional components
-@import "components/overlay";
-@import "components/flyout";
-@import "components/sidebar";
-@import "components/offcanvas";
-@import "components/collapse";
-
-//other components
-
-//main layout files
-@import "layouts/header";
-@import "layouts/footer";
-@import "layouts/pages";
-
-//othe layouts

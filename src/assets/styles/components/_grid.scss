@@ -1,5 +1,0 @@
-@if $enable-grid-classes {
-  @if $enable-multi-grid {
-    @include make-multi-grid-columns();
-  }
-}
