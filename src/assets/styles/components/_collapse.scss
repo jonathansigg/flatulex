@@ -1,0 +1,15 @@
+// collapse
+.collapse-section {
+  transition: all $animation-slow;
+  overflow: hidden;
+  height: auto;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.collapse-section.open {
+  opacity: 1;
+  visibility: visible;
+  max-height: 2000px;
+}

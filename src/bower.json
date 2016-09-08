@@ -1,0 +1,12 @@
+{
+  "name": "flatulex",
+  "homepage": "https://www.cs2.ch",
+  "authors": [
+    "Jonathan Sigg <jonathan.sigg@cs2.ch>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "css-hamburgers": "^0.5.0"
+  }
+}
