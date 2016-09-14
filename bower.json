@@ -9,6 +9,7 @@
   "dependencies": {
     "css-hamburgers": "^0.5.0",
     "font-awesome": "fontawesome#^4.6.3",
-    "normalize-css": "^4.2.0"
+    "normalize-css": "^4.2.0",
+    "jquery": "^3.1.0"
   }
 }
