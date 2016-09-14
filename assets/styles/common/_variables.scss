@@ -1,9 +1,37 @@
 /***********************************************
   Importing all variables
 ************************************************/
+/***********************************************
+  define all paths
+************************************************/
+$font-path:     "../fonts/";
+$image-path:    "../images/";
 
-// define all paths
-@import "variables/paths";
+/***********************************************
+  typography
+************************************************/
+/* Fontfamily for textelements */
+$font-family-text:      'News Cycle', sans-serif;
 
-// typography
-@import "variables/typography";
+/* Fontfamily for titles */
+$font-family-title:     'Pathway Gothic One', sans-serif;
+
+/* Fontfamily monospace */
+$font-family-mono:      'Anonymous Pro', monospace;
+
+/***********************************************
+  grid
+************************************************/
+$grids: (
+  "grid-4" : 4,
+  "grid-3" : 3
+);
+
+$grid-padding:  1rem;
+
+$breakpoints: (
+  "mobile": 320px,
+  "tablet": 740px,
+  "desktop": 980px,
+  "other": 1300px
+);

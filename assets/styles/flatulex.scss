@@ -6,4 +6,10 @@
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
+// mixins
+@import "common/mixins";
+
+// global
 @import "common/global";
+
+@import "components/grid";
