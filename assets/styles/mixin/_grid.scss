@@ -1,46 +1,33 @@
-@mixin create_row ( $grid-padding ) {
+@mixin create_row ( $row-padding ) {
   .row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
-    margin: 0 -#{$grid-padding};
+    margin: 0 -#{$row-padding};
   }
 }
 
-@mixin create_columns ( $grids, $breakpoints, $grid-padding ) {
-  @each $gridname, $columns in $grids {
-    $counter: 1;
-    $current-width: 0px;
-    @each $breakpoint, $breakpoint-width in $breakpoints {
-      @if ( $counter == 1 ) {
+@mixin create_columns ( $grid, $breakpoint-all, $padding ) {
+  $current-width: 0px;
+  @each $breakpoint, $breakpoint-width in $breakpoint-all {
+    @media ( min-width: #{$current-width} ) {
+      @each $gridname, $columns in $grid {
         @for $i from 1 through $columns {
           .col-#{$breakpoint}-#{$i}-#{$gridname} {
             width: percentage($i / $columns);
             flex: 0 0 percentage($i / $columns);
             display: flex;
-            padding: 0 $grid-padding;
-          }
-        }
-      } @else {
-        @media ( min-width: #{$current-width} ) {
-          @for $i from 1 through $columns {
-            .col-#{$breakpoint}-#{$i}-#{$gridname} {
-              width: percentage($i / $columns);
-              flex: 0 0 percentage($i / $columns);
-              display: flex;
-              padding: 0 $grid-padding;
-            }
+            padding: 0 $padding;
           }
         }
       }
       $current-width: $breakpoint-width;
-      $counter: $counter + 1;
     }
   }
 }
 
-@mixin create_grid ( $grids, $breakpoints, $grid-padding ) {
+@mixin create_grid ( $grid: $grids, $breakpoint: $breakpoints, $padding: $grid-padding ) {
   @include create_row( $grid-padding );
-  @include create_columns( $grids, $breakpoints, $grid-padding );
+  @include create_columns( $grid, $breakpoint, $padding );
 }
