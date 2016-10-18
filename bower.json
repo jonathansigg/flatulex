@@ -1,12 +1,15 @@
 {
   "name": "flatulex",
-  "homepage": "https://www.cs2.ch",
+  "homepage": "https://jonathansigg.github.io/flatulex/",
   "authors": [
     "Jonathan Sigg <jonathan.sigg@cs2.ch>"
   ],
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "css-hamburgers": "^0.5.0"
+    "css-hamburgers": "^0.5.0",
+    "font-awesome": "fontawesome#^4.6.3",
+    "normalize-css": "^4.2.0",
+    "jquery": "^3.1.0"
   }
 }

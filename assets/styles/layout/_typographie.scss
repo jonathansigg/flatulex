@@ -1,0 +1,8 @@
+body { font-family: $font-family-text; font-weight: $font-weight-base; font-size: $font-size-base; }
+.lead { font-family: $font-family-lead; }
+pre { font-family: $font-family-mono }
+
+/* titles */
+@for $i from 1 through 6 {
+  h#{$i}, .h#{$i} { font-family: $font-family-title; font-weight: $font-weight-bold; font-size: map_get($font-size-titles,"h#{$i}"); }
+}
