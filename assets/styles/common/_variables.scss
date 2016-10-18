@@ -1,0 +1,79 @@
+/***********************************************
+  Importing all variables
+************************************************/
+/***********************************************
+  define all paths
+************************************************/
+$font-path:     "../fonts/" !default;
+$image-path:    "../images/" !default;
+
+/***********************************************
+  typography
+************************************************/
+/* Fontfamily for textelements */
+$font-family-text:      "News Cycle", sans-serif !default;
+
+/* Fontfamily for leadtext */
+$font-family-lead:     "Pathway Gothic One", sans-serif !default;
+
+/* Fontfamily for titles */
+$font-family-title:     "Libre Baskerville", serif !default;
+
+/* Fontfamily monospace */
+$font-family-mono:      "Anonymous Pro", monospace !default;
+
+/* font-weight */
+$font-weight-base:      400 !default;
+$font-weight-light:     100 !default;
+$font-weight-bold:      700 !default;
+
+/* fontsize */
+$font-size-base:        1rem !default;
+$font-size-small:       0.75rem !default;
+
+$font-size-titles: (
+  "h1": 2.5rem,
+  "h2": 2.3rem,
+  "h3": 2rem,
+  "h4": 1.8rem,
+  "h5": 1.5rem,
+  "h6": 1.2rem
+) !default;
+
+/***********************************************
+  colors
+************************************************/
+// text colors
+$color-primary:         #43A047 !default;
+$color-secondary:       #3949AB !default;
+$color-text:            #212121 !default;
+$color-lead:            #37474F !default;
+$color-success:         #66BB6A !default;
+$color-error:           #ef5350 !default;
+$color-info:            #5C6BC0 !default;
+$color-dark:            #000000 !default;
+$color-dark-lighter:    ligthen($color-dark,20%) !default;
+$color-light:           ligthen($color-dark,50%) !default;
+$color-light-ligther:   ligthen($color-dark,80%) !default;
+
+// background colors
+$background-body:       #FAFAFA !default;
+$background-primary:    #EEEEEE !default;
+$background-secondary:  #E0E0E0 !default;
+
+/***********************************************
+  grid
+************************************************/
+$grids: (
+  "grid-4" : 4,
+  "grid-3" : 3
+) !default;
+
+$grid-padding:  1rem !default;
+
+$breakpoints: (
+  "mobile": 320px,
+  "tablet": 740px,
+  "desktop": 980px,
+  "other": 1300px
+) !default;

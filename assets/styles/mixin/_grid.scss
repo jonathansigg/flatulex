@@ -1,0 +1,45 @@
+@mixin create_row ( $row-padding ) {
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    margin: 0 -#{$row-padding} -#{$row-padding};
+  }
+}
+
+@mixin create_column_content ( $content-padding ) {
+  .column-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: $content-padding;
+  }
+}
+
+@mixin create_columns ( $grid, $breakpoint-all, $padding ) {
+  $current-width: 0px;
+  @each $breakpoint, $breakpoint-width in $breakpoint-all {
+    @media ( min-width: #{$current-width} ) {
+      @each $gridname, $columns in $grid {
+        @for $i from 1 through $columns {
+          .col-#{$breakpoint}-#{$i}-#{$gridname} {
+            width: percentage($i / $columns);
+            flex: 0 0 percentage($i / $columns);
+            display: flex;
+            padding: 0 $padding;
+            margin-bottom: $padding;
+          }
+        }
+      }
+      $current-width: $breakpoint-width;
+    }
+  }
+}
+
+@mixin create_grid ( $grid: $grids, $breakpoint: $breakpoints, $padding: $grid-padding ) {
+  @include create_row( $grid-padding );
+  @include create_column_content( $grid-padding );
+  @include create_columns( $grid, $breakpoint, $padding );
+}
