@@ -4,20 +4,41 @@
 /***********************************************
   define all paths
 ************************************************/
-$font-path:     "../fonts/";
-$image-path:    "../images/";
+$font-path:     "../fonts/" !default;
+$image-path:    "../images/" !default;
 
 /***********************************************
   typography
 ************************************************/
 /* Fontfamily for textelements */
-$font-family-text:      'News Cycle', sans-serif;
+$font-family-text:      "News Cycle", sans-serif !default;
+
+/* Fontfamily for leadtext */
+$font-family-lead:     "Pathway Gothic One", sans-serif !default;
 
 /* Fontfamily for titles */
-$font-family-title:     'Pathway Gothic One', sans-serif;
+$font-family-title:     "Libre Baskerville", serif !default;
 
 /* Fontfamily monospace */
-$font-family-mono:      'Anonymous Pro', monospace;
+$font-family-mono:      "Anonymous Pro", monospace !default;
+
+/* font-weight */
+$font-weight-base:      400;
+$font-weight-light:     100;
+$font-weight-bold:      700;
+
+/* fontsize */
+$font-size-base:        1rem;
+$font-size-small:       0.75rem;
+
+$font-size-titles: (
+  "h1": 2.5rem,
+  "h2": 2.3rem,
+  "h3": 2rem,
+  "h4": 1.8rem,
+  "h5": 1.5rem,
+  "h6": 1.2rem
+) !default;
 
 /***********************************************
   grid
@@ -25,13 +46,13 @@ $font-family-mono:      'Anonymous Pro', monospace;
 $grids: (
   "grid-4" : 4,
   "grid-3" : 3
-);
+) !default;
 
-$grid-padding:  1rem;
+$grid-padding:  1rem !default;
 
 $breakpoints: (
   "mobile": 320px,
   "tablet": 740px,
   "desktop": 980px,
   "other": 1300px
-);
+) !default;

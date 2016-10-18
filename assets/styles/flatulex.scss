@@ -1,5 +1,5 @@
 @import "common/variables";
-
+@import "common/webfonts";
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 @import "../../bower_components/css-hamburgers/_sass/hamburgers/hamburgers.scss";
@@ -17,3 +17,4 @@
 
 // layout
 @import "layout/containers";
+@import "layout/typographie";
