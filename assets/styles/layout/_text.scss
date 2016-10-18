@@ -1,0 +1,21 @@
+body { color: $color-text; background: $background-body; }
+a { color: $color-primary;
+  &:visited { color: $color-primary; }
+  &:hover, &:focus { color: ligthen($color-primary,10%); }
+  &:active { color: darken($color-primary,10%); }
+}
+.lead { color: $color-lead; }
+
+$current-width: 0px;
+@each $breakpoint, $breakpoint-width in $breakpoints {
+  @media ( min-width: #{$current-width} ) {
+    .text {
+      &-#{$breakpoint} {
+        &-center { text-align: center; }
+        &-left { text-align: left; }
+        &-right { text-align: right }
+      }
+    }
+  }
+  $current-width: $breakpoint-width;
+}
