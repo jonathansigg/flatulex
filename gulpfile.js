@@ -10,7 +10,6 @@ var gulpif       = require('gulp-if');
 var imagemin     = require('gulp-imagemin');
 var jshint       = require('gulp-jshint');
 var lazypipe     = require('lazypipe');
-var less         = require('gulp-less');
 var merge        = require('merge-stream');
 var cssNano      = require('gulp-cssnano');
 var plumber      = require('gulp-plumber');
@@ -67,6 +66,12 @@ var enabled = {
 // Path to the compiled assets manifest in the dist directory
 var revManifest = path.dist + 'assets.json';
 
+// Error checking; produce an error rather than crashing.
+var onError = function(err) {
+  console.log(err.toString());
+  this.emit('end');
+};
+
 // ## Reusable Pipelines
 // See https://github.com/OverZealous/lazypipe
 
@@ -84,9 +89,6 @@ var cssTasks = function(filename) {
     })
     .pipe(function() {
       return gulpif(enabled.maps, sourcemaps.init());
-    })
-    .pipe(function() {
-      return gulpif('*.less', less());
     })
     .pipe(function() {
       return gulpif('*.scss', sass({
@@ -177,6 +179,7 @@ gulp.task('styles', ['wiredep'], function() {
       });
     }
     merged.add(gulp.src(dep.globs, {base: 'styles'})
+      .pipe(plumber({errorHandler: onError}))
       .pipe(cssTasksInstance));
   });
   return merged
@@ -191,6 +194,7 @@ gulp.task('scripts', ['jshint'], function() {
   manifest.forEachDependency('js', function(dep) {
     merged.add(
       gulp.src(dep.globs, {base: 'scripts'})
+        .pipe(plumber({errorHandler: onError}))
         .pipe(jsTasks(dep.name))
     );
   });
@@ -212,11 +216,11 @@ gulp.task('fonts', function() {
 // `gulp images` - Run lossless compression on all the images.
 gulp.task('images', function() {
   return gulp.src(globs.images)
-    .pipe(imagemin({
-      progressive: true,
-      interlaced: true,
-      svgoPlugins: [{removeUnknownsAndDefaults: false}, {cleanupIDs: false}]
-    }))
+    .pipe(imagemin([
+      imagemin.jpegtran({progressive: true}),
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.svgo({plugins: [{removeUnknownsAndDefaults: false}, {cleanupIDs: false}]})
+    ]))
     .pipe(gulp.dest(path.dist + 'images'))
     .pipe(browserSync.stream());
 });
